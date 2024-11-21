@@ -1,0 +1,16 @@
+# configure output
+Makefile
+config.h
+config.log
+config.status
+libtool
+stamp-h1
+.deps/
+
+# make output
+*.lo
+*.o
+*.la
+.libs/
+build/
+

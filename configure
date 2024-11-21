@@ -17569,7 +17569,7 @@ $as_echo "$as_me: WARNING: LAME doesn't know about your version (${GCC_version})
 			OPTIMIZATION="-Ofast"
 			;;
 		*)
-			OPTIMIZATION="-O3"
+			OPTIMIZATION="-O2"
 			;;
 		esac
 
@@ -20182,4 +20182,3 @@ if test -n "$ac_unrecognized_opts" && test "$enable_option_checking" != no; then
   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
 $as_echo "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
 fi
-
