@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 ABIS=("armeabi-v7a" "arm64-v8a" "x86" "x86_64")
 
+# ./build_all_android.sh
+
 rm -r build/prefab
 mkdir -p build/prefab
 
@@ -40,3 +42,17 @@ pushd build
         rm -r prefab-verification/
     done
 popd
+
+# zip prefab/ and AndroidManifest.xml into an .aar
+rm -r build/aar
+mkdir -p build/aar
+
+cp -rt build/aar/ build/prefab
+cp -t build/aar/ android/AndroidManifest.xml
+
+pushd build/aar
+    zip -r ../lame-3.100.aar . > /dev/null
+popd
+
+# verify .aar and print output path to console
+unzip -t build/lame-3.100.aar
