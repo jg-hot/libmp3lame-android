@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 ABIS=("armeabi-v7a" "arm64-v8a" "x86" "x86_64")
 
-# ./build_all_android.sh
+# ./android-build.sh
 
 rm -r build/aar/prefab/
 mkdir -vp build/aar/prefab/

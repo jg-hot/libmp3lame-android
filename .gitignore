@@ -13,4 +13,5 @@ stamp-h1
 *.la
 .libs/
 build/
+frontend/lame
 
