@@ -39,16 +39,18 @@ pushd build
             exit 1
         fi
 
-        rm -r tmp/prefab-verification/
+        rm -r tmp/
     done
 popd
+
+AAR_NAME="lame-3.100-android-r1.aar"
 
 # zip prefab/ and AndroidManifest.xml into an .aar
 cp -vt build/aar/ android/AndroidManifest.xml
 
 pushd build/aar
-    zip -r ../lame-3.100.aar . > /dev/null
+    zip -r "../$AAR_NAME" . > /dev/null
 popd
 
 # verify .aar and print output path to console
-unzip -t build/lame-3.100.aar
+unzip -t "build/$AAR_NAME"
