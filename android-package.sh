@@ -20,7 +20,7 @@ pushd build
 
     # verify prefab package
     for ABI in ${ABIS[@]}; do
-        prefab \
+        (set -x; prefab \
             --build-system cmake \
             --platform android \
             --os-version 21 \
@@ -28,7 +28,7 @@ pushd build
             --stl none \
             --abi ${ABI} \
             --output $(pwd)/prefab-verification \
-            $(pwd)/prefab
+            $(pwd)/prefab)
 
         RESULT=$?; if [[ $RESULT == 0 ]]; then
             echo "$ABI: prefab package verified"
