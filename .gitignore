@@ -12,6 +12,7 @@ stamp-h1
 *.o
 *.la
 .libs/
-build/
 frontend/lame
 
+# android build output
+build/

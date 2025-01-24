@@ -10,8 +10,8 @@ cp -vrt build/aar/prefab/ android/prefab-template/*
 # make prefab package
 pushd build
     # copy headers
-    mkdir -vp aar/prefab/modules/mp3lame/include/
-    cp -vt aar/prefab/modules/mp3lame/include/ include/lame/*.h
+    mkdir -vp aar/prefab/modules/mp3lame/include/lame
+    cp -vt aar/prefab/modules/mp3lame/include/lame include/lame/*.h
 
     # copy libraries
     for ABI in ${ABIS[@]}; do
@@ -41,7 +41,8 @@ pushd build
     done
 popd
 
-AAR_NAME="lame-3.100-android-r1.aar"
+AAR_NAME="lame-android-3.100-android-r1.aar"
+rm -f "build/$AAR_NAME"
 
 # zip prefab/ and AndroidManifest.xml into an .aar
 cp -vt build/aar/ android/AndroidManifest.xml
